@@ -1,0 +1,86 @@
+.articles {
+  background-color: $veryLightGray;
+  // &__grid {
+  //   // display: grid;
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr 1fr 1fr;
+  // }
+
+  // &__card {
+  // }
+}
+
+.article {
+  &__content {
+  }
+
+  &__grid {
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.875rem;
+    }
+  }
+
+  &__item {
+    border-radius: 0.3125rem;
+    overflow: hidden; //overflow: hidden : allows border-radius to be visible
+    background-color: $white;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+
+    //box-shadow parameter
+    //first 2 numbers are the position of the shadow:
+    //first number controls the horizontal position of the shadow
+    //second number controls, the vertical position : for making the shadow a litle bit down from
+    //--the object itselft, to look like a real shadow.
+    //third numbercontrols the spreed, or how hard will the shadow will be
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    transition: all 150ms ease-in-out; //controls the smoothnest and speed of the animation
+
+    &:hover {
+      transform: scale(1.05); //
+    }
+  }
+
+  &__image {
+    height: 12.5rem;
+    background-size: cover; // make sure img will take the intire size of the div
+    background-repeat: no-repeat; // repet off
+    background-position: center center; //makes sure img is centered
+  }
+
+  &__text {
+    padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+    color: $grayishBlue;
+    @include breakpoint-up(medium) {
+      padding: 1.875rem 1.565rem;
+    }
+  }
+
+  &__author {
+    font-size: 0.625rem;
+
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-size: 1.0625rem;
+    line-height: 1.2;
+
+    color: $darkBlue;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+  }
+}

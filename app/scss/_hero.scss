@@ -1,0 +1,86 @@
+.hero {
+  background-color: $veryLightGray;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    // border: 1px solid magenta;
+    position: relative;
+    background-image: url(/images/bg-intro-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+    //z-index: 1;
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+    }
+    @include breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      min-height: 41rem;
+      background-image: none;
+      // background-image: url(/images/bg-intro-desktop.svg);
+      // background-position: left center;
+    }
+
+    &::before {
+      @include breakpoint-up(large) {
+        content: "";
+        position: absolute;
+
+        height: 100%;
+        //  width: 100%;
+        background-image: url(/images/bg-intro-desktop.svg);
+
+        //background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        width: 150%;
+        background-size: 122%;
+        background-position: 0% 77%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url(/images/image-mockups.png);
+      background-size: 93%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+
+      @include breakpoint-up(medium) {
+        background-size: 52%;
+      }
+
+      @include breakpoint-up(large) {
+        height: 122%;
+        width: 120%;
+        left: 15%;
+        top: 0%;
+
+        background-size: 92%;
+
+        background-position: center 180%;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      flex: 2;
+      order: 1;
+      text-align: left;
+    }
+  }
+}

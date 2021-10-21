@@ -8,9 +8,8 @@ btnMenu.addEventListener("click", function () {
   console.log("open menu");
 
   if (header.classList.contains("open")) {
-    body.classList.remove("noscroll");
     // close mobile menu toggle
-
+    body.classList.remove("noscroll");
     header.classList.remove("open");
     fadeElements.forEach((elements) => {
       elements.classList.remove("fade-in");
@@ -26,4 +25,3 @@ btnMenu.addEventListener("click", function () {
     });
   }
 });
-s;
